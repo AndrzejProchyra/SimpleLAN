@@ -41,6 +41,12 @@ LNNode >> initialize [
 ]
 
 { #category : 'accessing' }
+LNNode >> logStream: aStream [
+
+	logStream := aStream
+]
+
+{ #category : 'accessing' }
 LNNode >> name [
 
 	^ name
