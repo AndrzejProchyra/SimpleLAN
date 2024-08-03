@@ -21,9 +21,10 @@ LNNode class >> example1 [
 
 { #category : 'testing' }
 LNNode >> accept: aPacket [
-	"Having received aPacket, send it on. This is the default behavior. My subclasses may override me to do something special."
-	
-	self send: aPacket 
+
+	(aPacket isAddressedTo: self)
+		ifTrue: [ self treatPacket: aPacket ]
+		ifFalse: [ self send: aPacket ]
 ]
 
 { #category : 'testing' }
@@ -89,4 +90,10 @@ LNNode >> send: aPacket [
 			cr;
 			flush.
 		nextNode accept: aPacket ]
+]
+
+{ #category : 'as yet unclassified' }
+LNNode >> treatPacket: aPacket [
+
+	^ self subclassResponsibility
 ]

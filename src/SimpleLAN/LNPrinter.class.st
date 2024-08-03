@@ -25,14 +25,6 @@ LNPrinter class >> example [
 ]
 
 { #category : 'testing' }
-LNPrinter >> accept: aPacket [
-
-	(aPacket isAddressedTo: self)
-		ifTrue: [ self print: aPacket ]
-		ifFalse: [ super accept: aPacket ]
-]
-
-{ #category : 'testing' }
 LNPrinter >> print: aPacket [
 
 	(logStream << 'Node ' << aPacket originatorName
@@ -40,4 +32,10 @@ LNPrinter >> print: aPacket [
 		<< aPacket contents;
 		cr;
 		flush
+]
+
+{ #category : 'testing' }
+LNPrinter >> treatPacket: aPacket [
+
+	self print: aPacket
 ]

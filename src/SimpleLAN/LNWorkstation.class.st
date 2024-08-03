@@ -46,19 +46,16 @@ LNWorkstation class >> example3 [
 ]
 
 { #category : 'testing' }
-LNWorkstation >> accept: aPacket [
-
-	(aPacket isAddressedTo: self)
-		ifTrue: [
-			(logStream << self name)
-				<< ' accepted packet';
-				cr;
-				flush ]
-		ifFalse: [ super accept: aPacket ]
-]
-
-{ #category : 'testing' }
 LNWorkstation >> emit: aPacket [
 
 	self send: aPacket
+]
+
+{ #category : 'testing' }
+LNWorkstation >> treatPacket: aPacket [
+
+	(logStream << self name)
+		<< ' accepted packet';
+		cr;
+		flush
 ]
