@@ -1,6 +1,6 @@
 Class {
 	#name : 'LNWorkstationTest',
 	#superclass : 'TestCase',
-	#category : 'SimpleLAN',
-	#package : 'SimpleLAN'
+	#category : 'SimpleLAN-Tests',
+	#package : 'SimpleLAN-Tests'
 }

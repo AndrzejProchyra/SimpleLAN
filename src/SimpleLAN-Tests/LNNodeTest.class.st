@@ -1,8 +1,8 @@
 Class {
 	#name : 'LNNodeTest',
 	#superclass : 'TestCase',
-	#category : 'SimpleLAN',
-	#package : 'SimpleLAN'
+	#category : 'SimpleLAN-Tests',
+	#package : 'SimpleLAN-Tests'
 }
 
 { #category : 'tests' }

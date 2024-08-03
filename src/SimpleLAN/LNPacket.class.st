@@ -25,7 +25,7 @@ LNPacket >> addresseeName: aString [
 { #category : 'accessing' }
 LNPacket >> content: aString [
 
-	self shouldBeImplemented
+	contents := aString
 ]
 
 { #category : 'accessing' }
