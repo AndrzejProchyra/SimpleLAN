@@ -49,7 +49,11 @@ LNWorkstation class >> example3 [
 LNWorkstation >> accept: aPacket [
 
 	(aPacket isAddressedTo: self)
-		ifTrue: [ (self name , ' accepted packet') traceCr ]
+		ifTrue: [
+			(logStream << self name)
+				<< ' accepted packet';
+				cr;
+				flush ]
 		ifFalse: [ super accept: aPacket ]
 ]
 

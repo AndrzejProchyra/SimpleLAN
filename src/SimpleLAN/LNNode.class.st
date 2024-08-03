@@ -3,7 +3,8 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'name',
-		'nextNode'
+		'nextNode',
+		'logStream'
 	],
 	#category : 'SimpleLAN',
 	#package : 'SimpleLAN'
@@ -35,6 +36,7 @@ LNNode >> hasNextNode [
 LNNode >> initialize [
 
 	super initialize.
+	logStream := Transcript.
 	name := 'unamed'
 ]
 
@@ -76,8 +78,9 @@ LNNode >> printOn: aStream [
 LNNode >> send: aPacket [
 
 	nextNode ifNotNil: [
-		self name trace.
-		' sends a packet to: ' trace.
-		nextNode name traceCr.
+		(logStream << name << ' sends a packet to: ')
+			<< nextNode name;
+			cr;
+			flush.
 		nextNode accept: aPacket ]
 ]

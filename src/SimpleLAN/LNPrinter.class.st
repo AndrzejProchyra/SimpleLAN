@@ -35,6 +35,9 @@ LNPrinter >> accept: aPacket [
 { #category : 'testing' }
 LNPrinter >> print: aPacket [
 
-	'Node ' , aPacket originatorName , ' sent to printer: '
-	, aPacket contents traceCr
+	(logStream << 'Node ' << aPacket originatorName
+	 << ' sent to printer: ')
+		<< aPacket contents;
+		cr;
+		flush
 ]
