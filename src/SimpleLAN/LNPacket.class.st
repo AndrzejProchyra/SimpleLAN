@@ -1,42 +1,46 @@
 Class {
-	#name : #LNPacket,
-	#superclass : #Object,
+	#name : 'LNPacket',
+	#superclass : 'Object',
 	#instVars : [
 		'contents',
 		'addresseeName',
 		'originatorName'
 	],
-	#category : #SimpleLAN
+	#category : 'SimpleLAN',
+	#package : 'SimpleLAN'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> addresseeName [
 
 	^ addresseeName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> addresseeName: aString [
 
 	addresseeName := aString
 ]
 
-{ #category : #accessing }
-LNPacket >> content: aString [ 
-	self shouldBeImplemented.
+{ #category : 'accessing' }
+LNPacket >> content: aString [
+
+	self shouldBeImplemented
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> contents [
+
 	^ contents
 ]
 
-{ #category : #accessing }
-LNPacket >> contents: aString [ 
+{ #category : 'accessing' }
+LNPacket >> contents: aString [
+
 	contents := aString
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LNPacket >> initialize [
 
 	super initialize.
@@ -45,25 +49,25 @@ LNPacket >> initialize [
 	addresseeName := '/'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNPacket >> isAddressedTo: aNode [
 
 	^ addresseeName = aNode name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> originatorName [
 
 	^ originatorName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> originatorName: aString [
 
 	originatorName := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNPacket >> printOn: aStream [
 
 	super printOn: aStream.

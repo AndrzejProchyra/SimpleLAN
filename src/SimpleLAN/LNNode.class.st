@@ -1,14 +1,15 @@
 Class {
-	#name : #LNNode,
-	#superclass : #Object,
+	#name : 'LNNode',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'nextNode'
 	],
-	#category : #SimpleLAN
+	#category : 'SimpleLAN',
+	#package : 'SimpleLAN'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 LNNode class >> example1 [
 
 	<script>
@@ -17,47 +18,51 @@ LNNode class >> example1 [
     nextNode: (LNNode new name: 'PC1'))  accept: (LNPacket new addresseeName: 'Mac')
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNNode >> accept: aPacket [
 	"Having received aPacket, send it on. This is the default behavior. My subclasses may override me to do something special."
 	
 	self send: aPacket 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNNode >> hasNextNode [
 	
 	^ nextNode isNotNil
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LNNode >> initialize [
 
 	super initialize.
 	name := 'unamed'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNNode >> name [
+
 	^ name
 ]
 
-{ #category : #accessing }
-LNNode >> name: aString [ 
+{ #category : 'accessing' }
+LNNode >> name: aString [
+
 	name := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LNNode >> nextNode [
+
 	^ nextNode
 ]
 
-{ #category : #accessing }
-LNNode >> nextNode: aLNNode [ 
+{ #category : 'accessing' }
+LNNode >> nextNode: aLNNode [
+
 	nextNode := aLNNode
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 LNNode >> printOn: aStream [
 
 	aStream nextPutAll: name.
@@ -67,7 +72,7 @@ LNNode >> printOn: aStream [
 		ifNotNil: [ aStream nextPutAll: nextNode name ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNNode >> send: aPacket [
 
 	nextNode ifNotNil: [

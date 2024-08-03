@@ -1,29 +1,32 @@
 Class {
-	#name : #LNNodeTest,
-	#superclass : #TestCase,
-	#category : #SimpleLAN
+	#name : 'LNNodeTest',
+	#superclass : 'TestCase',
+	#category : 'SimpleLAN',
+	#package : 'SimpleLAN'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNNodeTest >> testHasNextNode [
-	self deny: LNNode new hasNextNode 
+
+	self deny: LNNode new hasNextNode
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNNodeTest >> testName [
-  | node |
-  node := LNNode new.
-  node name: #PC1.
-  self assert: node name equals: #PC1
+
+	| node |
+	node := LNNode new.
+	node name: #PC1.
+	self assert: node name equals: #PC1
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNNodeTest >> testPrintingJustInitializedNode [
 
 	self assert: LNNode new printString equals: 'unamed -> /'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNNodeTest >> testPrintingWithANextNode [
 
 	self
@@ -33,12 +36,12 @@ LNNodeTest >> testPrintingWithANextNode [
 		equals: 'LNNode1 -> PC1'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNNodeTest >> testPrintingWithoutNextNode [
 
 	self
 		assert: (LNNode new
-				 name: #LNNode1; 
-				printString)
+				 name: #LNNode1;
+				 printString)
 		equals: 'LNNode1 -> /'
 ]

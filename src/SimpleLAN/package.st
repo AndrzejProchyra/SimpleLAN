@@ -1,1 +1,1 @@
-Package { #name : #SimpleLAN }
+Package { #name : 'SimpleLAN' }

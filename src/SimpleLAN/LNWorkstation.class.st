@@ -1,10 +1,11 @@
 Class {
-	#name : #LNWorkstation,
-	#superclass : #LNNode,
-	#category : #SimpleLAN
+	#name : 'LNWorkstation',
+	#superclass : 'LNNode',
+	#category : 'SimpleLAN',
+	#package : 'SimpleLAN'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 LNWorkstation class >> example [
 
 	<script>
@@ -16,7 +17,7 @@ LNWorkstation class >> example [
 		(LNPacket new addresseeName: 'Mac')
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 LNWorkstation class >> example2 [
 
 	<script>
@@ -30,7 +31,7 @@ LNWorkstation class >> example2 [
 				  yourself)) accept: (LNPacket new addresseeName: 'Mac2')
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 LNWorkstation class >> example3 [
 
 	<script>
@@ -44,7 +45,7 @@ LNWorkstation class >> example3 [
 				  yourself)) emit: (LNPacket new addresseeName: 'Mac2')
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNWorkstation >> accept: aPacket [
 
 	(aPacket isAddressedTo: self)
@@ -52,8 +53,8 @@ LNWorkstation >> accept: aPacket [
 		ifFalse: [ super accept: aPacket ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LNWorkstation >> emit: aPacket [
-	
+
 	self send: aPacket
 ]

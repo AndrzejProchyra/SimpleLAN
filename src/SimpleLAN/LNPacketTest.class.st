@@ -1,10 +1,11 @@
 Class {
-	#name : #LNPacketTest,
-	#superclass : #TestCase,
-	#category : #SimpleLAN
+	#name : 'LNPacketTest',
+	#superclass : 'TestCase',
+	#category : 'SimpleLAN',
+	#package : 'SimpleLAN'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNPacketTest >> testInitialized [
 
 	| p |
@@ -14,13 +15,14 @@ LNPacketTest >> testInitialized [
 	self assert: p contents equals: ''
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNPacketTest >> testIsAddressedTo [
 
-	^ (LNPacket new addresseeName: 'Mac') isAddressedTo: (LNNode new name: 'Mac')
+	^ (LNPacket new addresseeName: 'Mac') isAddressedTo:
+		  (LNNode new name: 'Mac')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LNPacketTest >> testPrintString [
 
 	self
