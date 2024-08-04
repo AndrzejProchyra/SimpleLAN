@@ -3,6 +3,7 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'name',
+		'nextNode',
 		'logStream'
 	],
 	#category : 'SimpleLAN',

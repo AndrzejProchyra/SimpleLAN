@@ -22,9 +22,9 @@ LNLinkNodeTest >> testPrintingWithANextNode [
 
 	self
 		assert: (LNLinkNode new
-				 name: #LNNode1;
+				 name: #LNLinkNode1;
 				 nextNode: (LNLinkNode new name: #PC1)) printString
-		equals: 'LNNode1 -> PC1'
+		equals: 'LNLinkNode1 -> PC1'
 ]
 
 { #category : 'tests' }

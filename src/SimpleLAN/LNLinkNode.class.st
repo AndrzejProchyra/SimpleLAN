@@ -1,9 +1,6 @@
 Class {
 	#name : 'LNLinkNode',
 	#superclass : 'LNNode',
-	#instVars : [
-		'nextNode'
-	],
 	#category : 'SimpleLAN',
 	#package : 'SimpleLAN'
 }
@@ -64,7 +61,7 @@ LNLinkNode >> send: aPacket [
 		nextNode accept: aPacket ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 LNLinkNode >> treatPacket: aPacket [
 
 	^ self subclassResponsibility
