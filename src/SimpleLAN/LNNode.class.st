@@ -13,7 +13,7 @@ Class {
 { #category : 'testing' }
 LNNode >> accept: aPacket [
 
-	self subclassResponsibility
+	self send: aPacket
 ]
 
 { #category : 'initialization' }
