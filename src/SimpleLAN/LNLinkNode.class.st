@@ -2,9 +2,7 @@ Class {
 	#name : 'LNLinkNode',
 	#superclass : 'LNNode',
 	#instVars : [
-		'name',
-		'nextNode',
-		'logStream'
+		'nextNode'
 	],
 	#category : 'SimpleLAN',
 	#package : 'SimpleLAN'
@@ -31,32 +29,6 @@ LNLinkNode >> accept: aPacket [
 LNLinkNode >> hasNextNode [
 	
 	^ nextNode isNotNil
-]
-
-{ #category : 'initialization' }
-LNLinkNode >> initialize [
-
-	super initialize.
-	logStream := Transcript.
-	name := 'unamed'
-]
-
-{ #category : 'accessing' }
-LNLinkNode >> logStream: aStream [
-
-	logStream := aStream
-]
-
-{ #category : 'accessing' }
-LNLinkNode >> name [
-
-	^ name
-]
-
-{ #category : 'accessing' }
-LNLinkNode >> name: aString [
-
-	name := aString
 ]
 
 { #category : 'accessing' }
