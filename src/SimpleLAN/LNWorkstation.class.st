@@ -1,6 +1,6 @@
 Class {
 	#name : 'LNWorkstation',
-	#superclass : 'LNNode',
+	#superclass : 'LNLinkNode',
 	#category : 'SimpleLAN',
 	#package : 'SimpleLAN'
 }
@@ -11,7 +11,7 @@ LNWorkstation class >> example [
 	<script>
 	(LNWorkstation new
 		 name: 'Mac';
-		 nextNode: (LNNode new name: 'PC1'; nextNode: (LNWorkstation new
+		 nextNode: (LNLinkNode new name: 'PC1'; nextNode: (LNWorkstation new
 		 name: 'Mac2'; yourself); yourself)) 
 		accept:
 		(LNPacket new addresseeName: 'Mac')
@@ -23,7 +23,7 @@ LNWorkstation class >> example2 [
 	<script>
 	(LNWorkstation new
 		 name: 'Mac';
-		 nextNode: (LNNode new
+		 nextNode: (LNLinkNode new
 				  name: 'PC1';
 				  nextNode: (LNWorkstation new
 						   name: 'Mac2';
@@ -37,7 +37,7 @@ LNWorkstation class >> example3 [
 	<script>
 	(LNWorkstation new
 		 name: 'Mac';
-		 nextNode: (LNNode new
+		 nextNode: (LNLinkNode new
 				  name: 'PC1';
 				  nextNode: (LNWorkstation new
 						   name: 'Mac2';

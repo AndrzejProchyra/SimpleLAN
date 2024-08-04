@@ -1,6 +1,6 @@
 Class {
 	#name : 'LNPrinter',
-	#superclass : 'LNNode',
+	#superclass : 'LNLinkNode',
 	#category : 'SimpleLAN',
 	#package : 'SimpleLAN'
 }
@@ -11,7 +11,7 @@ LNPrinter class >> example [
 	<script>
 	(LNWorkstation new
 		 name: 'Mac';
-		 nextNode: (LNNode new
+		 nextNode: (LNLinkNode new
 				  name: 'PC1';
 				  nextNode: (LNWorkstation new
 						   name: 'Mac2';
