@@ -58,6 +58,7 @@ LNLinkNode >> send: aPacket [
 			<< nextNode name;
 			cr;
 			flush.
+		aPacket originatorName: name.
 		nextNode accept: aPacket ]
 ]
 
