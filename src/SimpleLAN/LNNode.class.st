@@ -41,3 +41,9 @@ LNNode >> name: aString [
 
 	name := aString
 ]
+
+{ #category : 'instructions' }
+LNNode >> send: aPacket [
+
+	self subclassResponsibility
+]
