@@ -50,7 +50,7 @@ LNLinkNode >> printOn: aStream [
 		ifNotNil: [ aStream nextPutAll: nextNode name ]
 ]
 
-{ #category : 'testing' }
+{ #category : 'instructions' }
 LNLinkNode >> send: aPacket [
 
 	nextNode ifNotNil: [
