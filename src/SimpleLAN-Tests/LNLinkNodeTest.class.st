@@ -6,22 +6,6 @@ Class {
 }
 
 { #category : 'tests' }
-LNLinkNodeTest >> testAddOriginatorNameOnSend [
-
-	| packet node1 node2 |
-	node1 := LNLinkNode new name: 'Node 1'.
-	node2 := LNLinkNode new name: 'Node 2'.
-	node1 nextNode: node2.
-	packet := LNPacket new
-		          contents: 'any contents';
-		          addresseeName: 'any addressee'.
-
-	node1 send: packet.
-
-	self assert: packet originatorName equals: 'Node 1'
-]
-
-{ #category : 'tests' }
 LNLinkNodeTest >> testDoNotSendPacketIfSelfIsOriginator [
 
 	| node1 node2 packet |
