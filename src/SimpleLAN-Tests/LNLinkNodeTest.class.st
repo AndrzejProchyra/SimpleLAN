@@ -22,6 +22,20 @@ LNLinkNodeTest >> testAddOriginatorNameOnSend [
 ]
 
 { #category : 'tests' }
+LNLinkNodeTest >> testDoNotSendPacketIfSelfIsOriginator [
+
+	| node1 node2 packet |
+	packet := LNPacket new originatorName: 'Node 1'.
+	node1 := LNLinkNode new name: 'Node 1'.
+	node2 := MockNode new.
+	node1 nextNode: node2.
+
+	node1 send: packet.
+
+	self assert: node2 callsToAccept equals: 0
+]
+
+{ #category : 'tests' }
 LNLinkNodeTest >> testHasNextNode [
 
 	self deny: LNLinkNode new hasNextNode

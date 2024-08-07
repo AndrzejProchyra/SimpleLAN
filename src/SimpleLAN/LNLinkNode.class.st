@@ -28,6 +28,15 @@ LNLinkNode >> hasNextNode [
 	^ nextNode isNotNil
 ]
 
+{ #category : 'instructions' }
+LNLinkNode >> logPacketSend [
+
+	(logStream << name << ' sends a packet to: ')
+		<< nextNode name;
+		cr;
+		flush
+]
+
 { #category : 'accessing' }
 LNLinkNode >> nextNode [
 
@@ -53,13 +62,11 @@ LNLinkNode >> printOn: aStream [
 { #category : 'instructions' }
 LNLinkNode >> send: aPacket [
 
-	nextNode ifNotNil: [
-		(logStream << name << ' sends a packet to: ')
-			<< nextNode name;
-			cr;
-			flush.
-		aPacket originatorName: name.
-		nextNode accept: aPacket ]
+	name = aPacket originatorName ifFalse: [
+		nextNode ifNotNil: [
+			self logPacketSend.
+			aPacket originatorName: name.
+			nextNode accept: aPacket ] ]
 ]
 
 { #category : 'testing' }
