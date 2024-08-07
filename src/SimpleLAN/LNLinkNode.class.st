@@ -19,13 +19,22 @@ LNLinkNode >> accept: aPacket [
 
 	(aPacket isAddressedTo: self)
 		ifTrue: [ self treatPacket: aPacket ]
-		ifFalse: [ self send: aPacket ]
+		ifFalse: [
+			self logPacketSend.
+			self send: aPacket ]
 ]
 
 { #category : 'testing' }
 LNLinkNode >> hasNextNode [
-	
-	^ nextNode isNotNil
+
+	^ nextNode isNull not
+]
+
+{ #category : 'initialization' }
+LNLinkNode >> initialize [
+
+	super initialize.
+	nextNode := NullNode new
 ]
 
 { #category : 'instructions' }
@@ -54,19 +63,13 @@ LNLinkNode >> printOn: aStream [
 
 	aStream nextPutAll: name.
 	aStream nextPutAll: ' -> '.
-	nextNode
-		ifNil: [ aStream nextPutAll: '/' ]
-		ifNotNil: [ aStream nextPutAll: nextNode name ]
+	aStream nextPutAll: nextNode name
 ]
 
 { #category : 'instructions' }
 LNLinkNode >> send: aPacket [
 
-	name = aPacket originatorName ifFalse: [
-		nextNode ifNotNil: [
-			self logPacketSend.
-			aPacket originatorName: name.
-			nextNode accept: aPacket ] ]
+	name = aPacket originatorName ifFalse: [ nextNode accept: aPacket ]
 ]
 
 { #category : 'testing' }

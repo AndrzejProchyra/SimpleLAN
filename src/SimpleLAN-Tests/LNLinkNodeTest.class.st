@@ -61,7 +61,7 @@ LNLinkNodeTest >> testSendLog [
 	node1 nextNode: node2.
 	node1 logStream: mockLogStream.
 
-	node1 send: LNPacket new.
+	node1 accept: LNPacket new.
 
 	self
 		assert: mockLogStream contents

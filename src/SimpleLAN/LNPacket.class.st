@@ -67,7 +67,7 @@ LNPacket >> originatorName: aString [
 	originatorName := aString
 ]
 
-{ #category : 'accessing' }
+{ #category : 'printing' }
 LNPacket >> printOn: aStream [
 
 	super printOn: aStream.

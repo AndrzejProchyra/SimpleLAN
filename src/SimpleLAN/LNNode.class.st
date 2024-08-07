@@ -27,6 +27,12 @@ LNNode >> initialize [
 	name := 'unamed'
 ]
 
+{ #category : 'testing' }
+LNNode >> isNull [
+
+	^ false
+]
+
 { #category : 'accessing' }
 LNNode >> logStream: aStream [
 
