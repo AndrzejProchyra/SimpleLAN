@@ -1,3 +1,6 @@
+"
+I am the base class of all LNNodes
+"
 Class {
 	#name : 'LNNode',
 	#superclass : 'Object',
@@ -46,4 +49,10 @@ LNNode >> name: aString [
 LNNode >> send: aPacket [
 
 	self subclassResponsibility
+]
+
+{ #category : 'testing' }
+LNNode >> treatPacket: aPacket [
+
+	^ self subclassResponsibility
 ]
