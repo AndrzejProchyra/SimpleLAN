@@ -48,6 +48,7 @@ LNWorkstation class >> example3 [
 { #category : 'testing' }
 LNWorkstation >> emit: aPacket [
 
+	aPacket originatorName: name.
 	self send: aPacket
 ]
 
