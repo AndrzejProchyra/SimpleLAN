@@ -1,6 +1,6 @@
 Class {
 	#name : 'MockNode',
-	#superclass : 'Object',
+	#superclass : 'LNNode',
 	#instVars : [
 		'callsToAccept'
 	],
@@ -23,5 +23,6 @@ MockNode >> callsToAccept [
 { #category : 'initialization' }
 MockNode >> initialize [
 
+	super initialize.
 	callsToAccept := 0
 ]

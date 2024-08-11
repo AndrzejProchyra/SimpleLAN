@@ -75,5 +75,5 @@ LNLinkNode >> send: aPacket [
 { #category : 'testing' }
 LNLinkNode >> treatPacket: aPacket [
 
-	^ self subclassResponsibility
+	"do nothing"
 ]
