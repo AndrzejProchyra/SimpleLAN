@@ -41,7 +41,7 @@ LNLinkNode >> initialize [
 LNLinkNode >> logPacketSend [
 
 	(logStream << name << ' sends a packet to: ')
-		<< nextNode name;
+		<< nextNode name asString;
 		cr;
 		flush
 ]
