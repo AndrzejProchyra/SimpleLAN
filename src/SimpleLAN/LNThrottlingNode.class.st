@@ -23,7 +23,7 @@ LNThrottlingNode >> accept: aPacket [
 		packetBuffer size timesRepeat: [
 			self
 				logPacketSend;
-				send: packetBuffer removeLast ] ]
+				send: packetBuffer removeFirst ] ]
 ]
 
 { #category : 'initialization' }
