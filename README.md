@@ -11,7 +11,7 @@ To install `SimpleLAN`, go to the Playground (`Ctrl+OW`) in your [Pharo](https:/
 ```Smalltalk
 Metacello new
   baseline: 'SimpleLAN';
-  repository: 'github://Ducasse/SimpleLAN/src';
+  repository: 'github://AndrzejProchyra/SimpleLAN/src';
   load.
 ```
 
@@ -22,7 +22,7 @@ If you want to add a dependency on OrderedSet to your project, include the follo
 ```Smalltalk
 spec
   baseline: 'SimpleLAN'
-  with: [ spec repository: 'github://Ducasse/SimpleLAN/src' ].
+  with: [ spec repository: 'github://AndrzejProchyra/SimpleLAN/src' ].
 ```
 
 To read more about baselines and Metacello, check out the [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) article on [Pharo Wiki](https://github.com/pharo-open-documentation/pharo-wiki).
